@@ -11,7 +11,7 @@ body {
     
     display: grid;
     grid-template-columns: max-content max-content;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
