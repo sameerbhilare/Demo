@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.demo {
+    width: 40%;
+    margin: 5rem auto;
+    background-color: #eee;
+    
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: rgb(10, 68, 134);
+    border-bottom: 1px solid transparent;
+}
+
+a:hover,
+a:active {
+    border-bottom: 1px solid currentColor;
+}
