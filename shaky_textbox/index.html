@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shaking Textbox (in case of error)</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" class="form">
+            <div class="form__input-box">
+                <label for="username">Enter anything:</label>
+                <input type="text" name="search" id="search" autocomplete="off" onfocus="removeError();">
+            </div>
+            <div class="btn-box">
+                <input type="button" name="submit" class="btn" value="Submit" onclick="addError();">
+            </div>
+        </form>
+    </div>
+
+    <div class="demo">
+        <p>
+            Type anything in the search textbox and click on the submit button.
+            The textbox will shake with red border around it.
+            Use case - Can be useful to show if user enters a wrong input than expected.
+        </p>
+    </div>
+
+    <script type="text/javascript">
+
+        function addError() {
+            var search = document.getElementById('search');
+            if(!search.classList.contains('error')) {
+                search.classList.add('error');
+            }
+        }
+
+        function removeError() {
+            var search = document.getElementById('search');
+            if(search.classList.contains('error')) {
+                search.classList.remove('error');
+            }
+        }
+    </script>
+</body>
+</html>
