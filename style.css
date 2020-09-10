@@ -2,19 +2,43 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    font-size: 14px;
+
+    display: grid;
+    row-gap: 5rem;
+    column-gap: 2rem;
+    grid-template-columns: 1fr minmax(15rem, 30rem) 1fr;
+}
+
+.container {
+    margin-top: 4rem;
+    background-color: #eee;
+    grid-column: 2 / 3;
 }
 
 .demo {
-    width: 40%;
-    margin: 5rem auto;
-    background-color: #eee;
-    
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #f5f5f5;
+
     display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 1rem;
+    grid-template-columns: 1fr max-content;
     align-items: center;
-    justify-content: center;
+
+    
 }
+@media only screen and (max-width: 500px) {
+    .demo {
+        margin: 1rem;
+        padding: 1rem;
+        grid-template-columns: minmax(13rem, max-content);
+    }
+
+    .container {
+        margin-top: 2rem;
+    }
+}
+
 
 a:link,
 a:visited {
