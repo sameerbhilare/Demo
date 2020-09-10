@@ -24,9 +24,8 @@ body {
     display: grid;
     grid-template-columns: 1fr max-content;
     align-items: center;
-
-    
 }
+
 @media only screen and (max-width: 500px) {
     .demo {
         margin: 1rem;
