@@ -1,3 +1,10 @@
+/*
+    This is a sample login page with Floating labels for the input text boxes.
+    At start, you see the placeholders for both Username and Password textboxes,
+    and as soon as you start typing, the placeholder label magically shifts 
+    before it's respective textbox. Also if the textbox is empty, the label just disappers.
+*/
+
 *,
 *::before,
 *::after {
@@ -13,32 +20,33 @@ html {
 body {
     font-size: 1.4rem;
     height: 100vh; /* for linear gradient to work on <body>, we need to specify height for the body element */
-    background-image: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .95)), url(background.jpg);
-    background-size: cover;    
+    background-image: linear-gradient(#ee9ca79f, #ffdde1be), url(background.jpg);
+    background-size: cover;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(15rem, 50rem) 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 2rem;
 }
 
 
 .container {
     
-    /********************
-     PURE CSS */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    width: 25%;
-    height: auto;
+    margin-top: 4rem;
+    grid-column: 2 /3 ;
+    grid-row: 2 / 3 ;
 
     border: 1px solid #ccc;
-    border-radius: 3px;
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+    border-radius: 10px;
     padding: 3rem;
 
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 h2 {
     margin-bottom: 3.5rem;
+    color: rgb(85, 83, 83);
 }
 
 .form__input-box > * {
@@ -51,7 +59,7 @@ h2 {
 
 .form__input-box label {
     margin-bottom: .4rem;
-    
+    color: rgb(85, 83, 83);
     /* placeolder shown */
     transform: translate(0, -6rem);
     opacity: 1;
@@ -65,8 +73,8 @@ h2 {
     padding: 1rem 1.6rem;
     width: 90%;
     margin: 0 auto;
-    border-radius: 3px;
-    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.25);
     border: 1px solid transparent; /* IMP: since we are using border on :focus, you may see minor shake without this line*/
 }
 
@@ -92,7 +100,9 @@ h2 {
     padding: 1rem 2rem;
     width: 45%;
     font-size: 1.5rem;
-    background-color: rgb(24, 67, 124, .8);
+    /*background-color:  rgb(24, 67, 124, .8);*/
+    background-image: linear-gradient(to right, #dd374d, #ff6678);
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
     color: #fff;
 
     transition: all .2s;
@@ -108,19 +118,10 @@ h2 {
     transform: translateY(3px);
 }
 
-
-.demo {
-    width: 60%;
-    margin: 0 auto;
-
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    border: 1px dashed #ccc;
-    border-radius: 3px;
-    padding: 2rem;
-    color: rgb(97, 95, 95);
-
+/* FOR RESPONSIVE DESIGN */
+@media only screen and (max-width: 500px) {
+    body {
+        grid-template-columns: 1fr 18fr 1fr;
+        grid-template-rows: 1fr minmax(350px, 1fr) 1fr;
+    }
 }
