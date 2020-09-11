@@ -1,3 +1,9 @@
+/*
+    Type anything in the search textbox and click on the submit button.
+    The textbox will shake with red border around it.
+    Use case - Can be useful to show if user enters a wrong input than expected.
+*/
+
 *,
 *::before,
 *::after {
@@ -11,19 +17,23 @@ html {
 }
 
 body {
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr minmax(15rem, 30rem) 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     row-gap: 2rem;
+
+    background-image: linear-gradient(#2193b0, #6dd5ed);
 }
 
 .container {
-    margin-top: 4rem;
     grid-column: 2 /3 ;
+    grid-row: 2 / 3 ;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 2rem;
 
-    background-color: #eee;
+    background-color: #f7f7f7;
 }
 
 .form__input-box {
@@ -43,7 +53,7 @@ body {
     padding: 1rem 1rem;
     width: 90%;
     margin: 0 auto;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid rgb(68, 67, 67);
 }
 
@@ -65,7 +75,7 @@ body {
     padding: 1rem 2rem;
     width: max(10rem, 45%);
     font-size: 1.5rem;
-    background-color: rgb(24, 67, 124, .8);
+    background-color: #2193b0;
     color: #fff;
 
     transition: all .2s;
@@ -74,7 +84,7 @@ body {
 
 .btn:hover,
 .btn:active {
-    background-color: rgb(24, 67, 124);
+    background-color: #1c7b93;
 }
 
 .btn:active {
@@ -113,5 +123,6 @@ body {
 @media only screen and (max-width: 500px) {
     body {
         grid-template-columns: 1fr 18fr 1fr;
+        grid-template-rows: 150px minmax(250px, 1fr) 1fr;
     }
 }
