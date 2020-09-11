@@ -11,9 +11,10 @@ body {
     /* fixed backround image which will not change its position based on scroll */
     background: url(img/bg.jpg);
     background-size: cover;
+    background-position: start;
 }
 
-.zoom:before {
+.zoom::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -76,4 +77,85 @@ body {
 
 .content p {
     font-size: 1.2em;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .zoom {
+        height: 900px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .zoom {
+        height: 700px;
+    }
+
+    .zoom #layer1 {
+        position: absolute;
+        width: 100%;
+        left: 40%;
+        top: 8%;
+        transform: translateX(-50%);
+
+        z-index: 10; /* to have this on top of all ther images */
+    }
+
+    .zoom #layer2 {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        top: 8%;
+        z-index: 9; /* to have this on top of text image but below layer 1 (Mountain 1 image)*/
+    }
+
+    .zoom #text {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        transform: translateY(50%);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .zoom {
+        height: 400px;
+        background-position: top;
+    }
+
+    .zoom #layer1 {
+        position: absolute;
+        width: 100%;
+        left: 40%;
+        top: 25%;
+        transform: translateX(-50%);
+
+        z-index: 10; /* to have this on top of all ther images */
+    }
+
+    .zoom #layer2 {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        top: 25%;
+        z-index: 9; /* to have this on top of text image but below layer 1 (Mountain 1 image)*/
+    }
+
+    .zoom #text {
+        transform: translateY(80%);
+    }
+
+        
+    .content {
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 1.2em;
+    }
+
 }

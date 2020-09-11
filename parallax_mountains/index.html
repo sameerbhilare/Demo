@@ -64,19 +64,40 @@
                will increase and since it has translateX(-50%) defined, that will also increase
                and at one point, the image will go out of sight. But of course we dont see it overlapping 
                because we have set the overflow as hidden in the parent */
-            layer1.style.width = (100 + scroll/5) + '%';
+            if (window.matchMedia('(max-width: 400px)')) {
+                layer1.style.width = (100 + scroll/2) + '%';
+            } else if (window.matchMedia('(max-width: 1000px)')) {
+                layer1.style.width = (100 + scroll/3) + '%';
+            } else {
+                layer1.style.width = (100 + scroll/5) + '%';
+            }
 
             /* slowly increasing the width based on scroll offset so that the layer 2 image
                will increase and also we are slowly increasing the 'left' 
                so that this image will be slowly shifted to right side of the viewport
                and at one point, the image will go out of sight. But of course we dont see it overlapping 
                because we have set the overflow as hidden in the parent */
-            layer2.style.width = (100 + scroll/5) + '%';
-            layer2.style.left = (scroll/50) + '%';
+            if (window.matchMedia('(max-width: 400px)')) {
+                layer2.style.width = (100 + scroll/4) + '%';
+                layer2.style.left = (scroll/10) + '%';
+                /* slowly increasing the width based on scroll offset so that the text image 
+                    will shift upward (top). And to move it upwards, we have to give negative value for top. */
+                text.style.top = -(scroll/3) + '%';
 
-            /* slowly increasing the width based on scroll offset so that the text image 
-               will shift upward (top). And to move it upwards, we have to give negative value for top. */
-            text.style.top = -(scroll/20) + '%';
+            } else if (window.matchMedia('(max-width: 1000px)')) {
+                layer2.style.width = (100 + scroll/4) + '%';
+                layer2.style.left = (scroll/40) + '%';
+                /* slowly increasing the width based on scroll offset so that the text image 
+                    will shift upward (top). And to move it upwards, we have to give negative value for top. */
+                text.style.top = -(scroll/15) + '%';
+
+            } else {
+                layer2.style.width = (100 + scroll/5) + '%';
+                layer2.style.left = (scroll/50) + '%';
+                /* slowly increasing the width based on scroll offset so that the text image 
+                    will shift upward (top). And to move it upwards, we have to give negative value for top. */
+                text.style.top = -(scroll/20) + '%';
+            }
 
             //console.log('layer1/2 width: '+ layer1.style.width);
             //console.log('layer2 left: '+ layer2.style.left);
