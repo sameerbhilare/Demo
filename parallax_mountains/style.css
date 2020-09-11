@@ -119,7 +119,7 @@ body {
 
 @media only screen and (max-width: 400px) {
     .zoom {
-        height: 400px;
+        height: 350px;
         background-position: top;
     }
 
