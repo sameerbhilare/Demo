@@ -9,9 +9,13 @@ body {
     grid-template-columns: 1fr minmax(15rem, 30rem) 1fr;
 }
 
+body:last-child {
+    margin-bottom: 3rem;
+}
+
 .container {
-    grid-column: 2 / 3 ;
     margin-top: 3rem;
+    grid-column: 2 / 3 ;
     padding: 3rem;
     text-align:center;
     background: #ccc;
@@ -239,4 +243,139 @@ body {
     width: 45%;
     opacity: 1;
     z-index: 1;
+}
+
+
+
+/******************************
+* SEARCHBOX 5
+  The idea here is on click of the search button/div, the textbox should expand on left 
+  and searchdiv should shift to right.
+  The search symbol is created with pure css, this is not any actual icon.
+  This is because on click of the search div we want to show a 'cross' instead of 'search' symbol
+  and with pure css implementation, the transition looks beautiful.
+*/
+
+/* Basic container configuration */
+.container5 {
+    grid-column: 2 / 3 ;
+    padding: 3rem;
+    text-align:center;
+    border-radius: 4px;
+    background: #d3d3d3;
+}
+
+/* Search input box 
+   searchbox initial state - 
+        the opacity is 0 and searchbox is on top of the searchdiv button.
+        This is imp to be on top of searchdiv because if we put searchdiv on top of inputbox
+        then there is no easy way to style 'previous' sibling.
+   on searchbox hover -
+        we show pointer cursor, but still the opacity is 0, so user thinks that he is click on the searchdiv :)
+   on searchbox focus -
+        we change the cursor to text. and put the searchdiv on top of the searchbox. :) */
+.search__input5 {
+    
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
+    margin-right: -65px;
+
+    width: 55px;
+    height: 50px;
+    /*padding: 0 80px 0 20px;*/
+    background: crimson;
+    color: white;
+    text-shadow: 0 0 10px crimson;
+    opacity: 0; /* intial state */
+    z-index: 5; /* initial state - to be on top of searchdiv */
+    position: relative;
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.search__input5:hover {
+    cursor: pointer; /* on searchbox hover - we show pointer cursor, but still the opacity is 0, 
+                        so user thinks that he is click on the searchdiv */
+} 
+.search__input5:focus {
+    width: 120px;
+    padding: 1px 80px 1px 20px;
+    opacity: 1; /* make the input box visible */
+    cursor: text;   /* change the cursor to text */
+}
+
+.search__input5:focus ~ .search__div5 {
+    z-index: 6; /* put the searchdiv on top of the searchbox. :) */
+    background-color: #151515; /* change background color of the searchdiv */
+}
+.search__input5:focus ~ .search__div5::before {
+    z-index: 6; /* put the searchdiv on top of the searchbox. :) */
+    background-color: #fff;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    top: 27px;
+    left: 20px;
+    border-radius: 0;
+    border: none;
+    transform: rotate(-45deg);
+}
+.search__input5:focus ~ .search__div5::after {
+    z-index: 6; /* put the searchdiv on top of the searchbox. :) */
+    background-color: #fff;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    top: 27px;
+    left: 20px;
+    border-radius: 0;
+    border: none;
+}
+
+.search__input5::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+
+  /* searchdiv initial state */
+.search__div5 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: crimson;
+    transform: translateY(25px);
+    cursor: pointer;
+
+    z-index: 4;
+    position: relative;
+    transition: all 1s;
+}
+
+/* draw a circle within the searchdiv */
+.search__div5::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: all .5s;
+}
+
+/* draw a line within the searchdiv and position is in such a way that it 'creates' search/maginifier symbol. */
+.search__div5::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 36px;
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    transition: all .5s;
 }
