@@ -387,4 +387,9 @@ body:last-child {
     .container5 {
         padding: 1rem;
     }
+
+    .search__input5:focus {
+        max-width: 100%;
+        padding: 1px 65px 1px 20px;
+    }
 }
