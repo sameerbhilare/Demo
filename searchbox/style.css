@@ -385,11 +385,11 @@ body:last-child {
 
 @media only screen and (max-width: 400px) {
     .container5 {
-        padding: 1rem;
+        padding: .5rem;
     }
 
     .search__input5:focus {
-        max-width: 100%;
+        max-width: 70%;
         padding: 1px 65px 1px 20px;
     }
 }
