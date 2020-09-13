@@ -382,3 +382,9 @@ body:last-child {
     transform: rotate(45deg);
     transition: all .3s;
 }
+
+@media only screen and (max-width: 400px) {
+    .container5 {
+        padding: 1rem;
+    }
+}
