@@ -28,12 +28,20 @@ body {
     grid-template-columns: 1fr max-content;
     align-items: center;
 
-    transition: all .2s;
+    transition: all .3s;
+    /*backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased; */
 }
 
 .demo:hover {
-    background-color: #eee;
-    transform: scale(1.01);
+    /* transform scale() mostly causes text blurrinesss. 
+       There are couple of ways to fix this. You can use all or some of these fixes at a time
+       1. backface-visibility: hidden;
+       2. font-smoothing: subpixel-antialiased; 
+       3. set perspective(1px) in the transform itself. (This has worked better than other 2 solutions.)
+       We can fix it is setting perspective property to some value. */
+    transform: scale(1.03) perspective(1px); 
+    /*-webkit-font-smoothing: subpixel-antialiased; */
 }
 
 a:link,
