@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dark Mode</title>
+</head>
+<body>
+    <button class="btn"><ion-icon name="sunny-outline" class="day-icon"></ion-icon></button>
+    <!-- <ion-icon name="moon-outline"></ion-icon> -->
+    <div class="container">
+        <h3>This is Demo text for Dark Mode</h4>
+        <p>
+            It is just a text not worth reading, but I have to write in order for the Dark mode demo
+            to look better. 
+        </p>
+        <p>
+            This paragraph is exactly what I mentioned above. Don't bother about reading it.
+            It is just a text not worth reading, but I have to write in order for the Dark mode demo
+            to look better. 
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ducimus nisi, officiis aliquid inventore delectus quam vitae doloremque. Voluptatibus earum excepturi mollitia nobis ipsam optio provident molestiae laborum magnam autem.
+        </p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, totam quisquam laborum dicta ipsum magni dolorem! Optio suscipit laborum maxime? Pariatur laboriosam dignissimos blanditiis, vero et hic cupiditate omnis modi!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non hic corrupti suscipit sint velit modi, soluta perspiciatis consectetur quos voluptates deleniti vitae. Quos, possimus sequi! Nihil beatae atque deserunt dicta.
+        </p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem minima, quasi reiciendis alias adipisci commodi est blanditiis, aut nemo fuga dolore sapiente enim illum, eligendi harum ducimus molestias in sint.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus reprehenderit saepe nostrum repellat tempore reiciendis ex cumque, itaque quae natus, ipsa obcaecati ipsum commodi nulla expedita neque perferendis officiis.
+        </p>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, consequuntur odio rem laudantium, repellat dolorem corporis debitis id earum minima adipisci fuga reprehenderit tempore ex alias eum excepturi pariatur provident?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit nulla rerum, nesciunt quia molestias. Maxime quos repudiandae aut quod dolorem quasi, iusto voluptatibus suscipit tempore temporibus quo placeat optio!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatum dolor dolorum in porro expedita ullam consectetur quidem veniam facere, voluptatem, illum delectus quaerat autem, cum sequi laborum incidunt cupiditate!
+        </p>
+    </div>
+    
+    <!--
+        Type anything in the search textbox and click on the submit button.
+        The textbox will shake with red border around it.
+        Use case - Can be useful to show if user enters a wrong input than expected.
+    -->
+    <script type="text/javascript">
+
+        function addError() {
+            var search = document.getElementById('search');
+            if(!search.classList.contains('error')) {
+                search.classList.add('error');
+            }
+        }
+
+        function removeError() {
+            var search = document.getElementById('search');
+            if(search.classList.contains('error')) {
+                search.classList.remove('error');
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+</body>
+</html>
