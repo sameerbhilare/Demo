@@ -63,19 +63,20 @@
             if(icon.name === 'sunny-outline') {
                 // change icon styles
                 icon.name = 'moon-outline';
-                icon.style.color = '#121212'; // black
-
-                // change button styles
-                btn.style.border = '1px solid rgba(0, 0, 0, .2)';
 
             } else if(icon.name === 'moon-outline') {
                 // change icon styles
                 icon.name = 'sunny-outline';
-                icon.style.color = '#FF8100'; // sunrise
-
-                // change button styles
-                btn.style.border = '1px solid rgba(255, 129, 0, .4)'; // same as #FF8100 with little transparency
             }
+
+            /*
+            // Code to read CSS Custom properties in JavaScript
+            var bodyStyles = window.getComputedStyle(document.body);
+            // change button styles
+            btn.style.border = bodyStyles.getPropertyValue('--toggle-border'); // light black or light sunrise
+            // change icon color based on selected body theme
+            icon.style.color = bodyStyles.getPropertyValue('--toggle-icon-color'); // black or sunrise
+            */
         });
 
     </script>

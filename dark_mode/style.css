@@ -24,12 +24,16 @@ body {
     --text-color: #222;
     --bkg-color: #fff;
     --anchor-color: #0033cc;
+    --toggle-border: 1px solid rgba(0, 0, 0, .2);
+    --toggle-icon-color: #222;
 }
 /* Dark Mode */
 body.dark-theme {
     --text-color: #eee;
     --bkg-color: #121212;
     --anchor-color: #809fff;
+    --toggle-border: 1px solid rgba(255, 129, 0, .4);
+    --toggle-icon-color: #FF8100;
 }
 
 body {
@@ -67,9 +71,10 @@ p {
     position: fixed;
     top: 2rem;
     right: 2rem;
+    cursor: pointer;
 
     outline: none;
-    border: 1px solid rgba(0, 0, 0, .2); /* initial border color */
+    border: var(--toggle-border); /* light black or light sunrise based on light or dark mode */
     border-radius: 50%;
     width: 2.3rem;
     height: 2.3rem;
@@ -85,6 +90,6 @@ p {
     position: relative;
     top: 1px;
     left: 1px;
-    color: #121212; /* black */
+    color: var(--toggle-icon-color); /* black or sunrise based on light or dark mode */
 }
 
