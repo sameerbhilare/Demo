@@ -7,10 +7,13 @@
     <title>Dark Mode</title>
 </head>
 <body>
-    <button class="btn"><ion-icon name="sunny-outline" class="day-icon"></ion-icon></button>
-    <!-- <ion-icon name="moon-outline"></ion-icon> -->
+    <button class="btn-toggle"><ion-icon name="moon-outline" class="toggle-icon"></ion-icon></button>
+    <!-- <ion-icon name="sunny-outline"></ion-icon> -->
     <div class="container">
-        <h3>This is Demo text for Dark Mode</h4>
+        <h3>Dark Mode demo</h4>
+        <p>
+            Please click on the icon at the top righ corner to toggle the Dark Mode.
+        </p>
         <p>
             It is just a text not worth reading, but I have to write in order for the Dark mode demo
             to look better. 
@@ -46,26 +49,26 @@
         </p>
     </div>
     
-    <!--
-        Type anything in the search textbox and click on the submit button.
-        The textbox will shake with red border around it.
-        Use case - Can be useful to show if user enters a wrong input than expected.
-    -->
     <script type="text/javascript">
 
-        function addError() {
-            var search = document.getElementById('search');
-            if(!search.classList.contains('error')) {
-                search.classList.add('error');
-            }
-        }
+        // Select the button
+        const btn = document.querySelector(".btn-toggle");
+        let icon = document.querySelector(".toggle-icon");
 
-        function removeError() {
-            var search = document.getElementById('search');
-            if(search.classList.contains('error')) {
-                search.classList.remove('error');
+        // Listen for a click on the button
+        btn.addEventListener("click", function() {
+            // Then toggle (add/remove) the .dark-theme class to the body
+            document.body.classList.toggle("dark-theme");
+
+            if(icon.name === 'sunny-outline') {
+                icon.name = 'moon-outline';
+                icon.style.color = '#121212'; // black
+            } else if(icon.name === 'moon-outline') {
+                icon.name = 'sunny-outline';
+                icon.style.color = '#FF8100'; // sunrise
             }
-        }
+        });
+
     </script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
