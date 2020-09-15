@@ -87,14 +87,9 @@ p {
 .toggle-icon {
     width: 80%;
     height: 80%;
-    outline: none;
     position: relative;
     top: 1px;
     left: 1px;
     color: var(--toggle-icon-color); /* black or sunrise based on light or dark mode */
 }
 
-.btn-toggle:focus,
-.toggle-icon:focus {
-    outline: none;
-}
