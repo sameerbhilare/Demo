@@ -94,3 +94,7 @@ p {
     color: var(--toggle-icon-color); /* black or sunrise based on light or dark mode */
 }
 
+.btn-toggle:focus,
+.toggle-icon:focus {
+    outline: none;
+}
