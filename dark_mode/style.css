@@ -69,7 +69,7 @@ p {
     right: 2rem;
 
     outline: none;
-    border: 1px solid rgba(0, 0, 0, .2);
+    border: 1px solid rgba(0, 0, 0, .2); /* initial border color */
     border-radius: 50%;
     width: 2.3rem;
     height: 2.3rem;

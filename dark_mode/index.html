@@ -61,11 +61,20 @@
             document.body.classList.toggle("dark-theme");
 
             if(icon.name === 'sunny-outline') {
+                // change icon styles
                 icon.name = 'moon-outline';
                 icon.style.color = '#121212'; // black
+
+                // change button styles
+                btn.style.border = '1px solid rgba(0, 0, 0, .2)';
+
             } else if(icon.name === 'moon-outline') {
+                // change icon styles
                 icon.name = 'sunny-outline';
                 icon.style.color = '#FF8100'; // sunrise
+
+                // change button styles
+                btn.style.border = '1px solid rgba(255, 129, 0, .4)'; // same as #FF8100 with little transparency
             }
         });
 
