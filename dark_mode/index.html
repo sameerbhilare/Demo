@@ -8,7 +8,7 @@
 </head>
 <body>
     <button class="btn-toggle"><ion-icon name="moon-outline" class="toggle-icon"></ion-icon></button>
-    <!-- <ion-icon name="sunny-outline"></ion-icon> -->
+    <!-- <ion-icon name="sunny"></ion-icon> -->
     <div class="container">
         <h3>Dark Mode demo</h4>
         <p>
@@ -60,13 +60,13 @@
             // Then toggle (add/remove) the .dark-theme class to the body
             document.body.classList.toggle("dark-theme");
 
-            if(icon.name === 'sunny-outline') {
+            if(icon.name === 'sunny') {
                 // change icon styles
                 icon.name = 'moon-outline';
 
             } else if(icon.name === 'moon-outline') {
                 // change icon styles
-                icon.name = 'sunny-outline';
+                icon.name = 'sunny';
             }
 
             /*
